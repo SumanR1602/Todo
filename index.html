@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY TODO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <script src="todoappjs.js"></script>
+    <link rel="shortcut icon" href='todoapplogo.jpeg' type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Ruwudu:wght@600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1 style="text-align: center;
+        font-size: 2rem;
+        margin: 10px; font-family: 'Ruwudu', serif;">TODO LIST</h1>
+        <div class="themes">
+            <div class="theme-para">
+                <p style="font-size: 1.6rem;">Select Your Theme:</p>
+            </div>
+            <div class="theme-btns">
+                <button class="theme-btn" style="background-color: #8a2be2"
+                    onclick="changeBg({color:'#8a2be2'})"></button>
+                <button class="theme-btn" style="background-color: #e29a2b;"
+                    onclick="changeBg({color:'#e29a2b'})"></button>
+                <button class="theme-btn" style="background-color: #e22b8a;"
+                    onclick="changeBg({color:'#e22b8a'})"></button>
+                <button class="theme-btn" style="background-color: #31ab37"
+                    onclick="changeBg({color:'#31ab37'})"></button>
+            </div>
+            <div class="theme-btns">
+                <button class="img-theme-btn theme-btn" style="background-image: url('/Bg1.jpg');"
+                    onclick="changeBg({imgname:'Bg1.jpg'})"></button>
+                <button class="img-theme-btn theme-btn" style="background-image: url('/Bg2.jpg');"
+                    onclick="changeBg({imgname:'Bg2.jpg'})"></button>
+                <button class="img-theme-btn theme-btn" style="background-image: url('/Bg3.jpg');"
+                    onclick="changeBg({imgname:'Bg3.jpg'})"></button>
+                <button class="img-theme-btn theme-btn" style="background-image: url('/Bg4.jpg');"
+                    onclick="changeBg({imgname:'Bg4.jpg'})"></button>
+            </div>
+        </div>
+        <div class="main">
+            <div class="left-box">
+                <ul class="fixed-groups">
+                    <li onclick="showPredefinedList(this)">
+                        <div class="task">
+                            <i class="fa-regular fa-star"></i>
+                            <p>Important</p>
+                        </div>
+                    </li>
+                    <li onclick="showPredefinedList(this)">
+                        <div class="task">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <p>Groceries</p>
+                        </div>
+                    </li>
+                    <li onclick="showPredefinedList(this)">
+                        <div class="task">
+                            <i class="fa-regular fa-user"></i>
+                            <p>Assigned to me</p>
+                        </div>
+                    </li>
+                    <li onclick="showPredefinedList(this)">
+                        <div class="task">
+                            <i class="fa-solid fa-house"></i>
+                            <p>Tasks</p>
+                        </div>
+                    </li>
+                    <li onclick="showPredefinedList(this)">
+                        <div class="task">
+                            <i style="margin-left: -10px;">👋</i>
+                            <p>Get Started</p>
+                        </div>
+                    </li>
+                </ul>
+                <div class="user-groups">
+                    <ul id="user-lists">
+                    </ul>
+                    <li class="add-list">
+                        <div class="task">
+                            <i class="fa-solid fa-plus"></i>
+                            <input type="text" name="newlist" id="newlist" placeholder="Create New List">
+                            <button onclick="Createlist()" class="btn">
+                                <i class="fa-regular fa-thumbs-up normal" style="font-size: 1.5rem;"></i>
+                            </button>
+                        </div>
+                    </li>
+                </div>
+
+            </div>
+            <div class="right-box">
+                <div class="tasks">
+                    <h1 class="heading">Get Started</h1>
+                    <ul id="task-list">
+                        <li>
+                            <div class="task">
+                                <div class="round-checkbox" onclick="taskfunc(this)">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <p>Create your first List by clicking on 👍 Create New list</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="task">
+                                <div class="round-checkbox" onclick="taskfunc(this)">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <p>Add your first task by clicking on 👍 Add a task</p>
+                            </div>
+                        </li>
+
+                        <li>
+
+                            <div class="task">
+                                <div class="round-checkbox" onclick="taskfunc(this)">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <p>Check out our sample grocery list and customise it for yourself</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="task">
+                                <div class="round-checkbox" onclick="taskfunc(this)">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <p>Tap all the circles in this list to complete your tasks ✅</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <ul id="completed-list">
+                        <button class="cbtn">Completed</button>
+                    </ul>
+                    <li class="tlast">
+                        <div class="task">
+                            <i class="fa-solid fa-plus" style=" margin-right: 0.5rem;"></i>
+                            <input type="text" name="newtask" placeholder="Add a Task" id="newtask">
+                            <button onclick="addtask()" class="taskbtn">
+                                <i class="fa-regular fa-thumbs-up" style="font-size: 1.5rem;"></i></button>
+                        </div>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
