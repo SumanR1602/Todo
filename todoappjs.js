@@ -2,7 +2,9 @@
 function changeBg(options) {
   const rightBox = document.getElementsByClassName("right-box")[0];
   if (options.color) {
+    rightBox.style.backgroundImage = "none";
     rightBox.style.backgroundColor = options.color;
+    document.querySelector('.heading').style.color = "white";
   }
   if (options.imgname) {
     rightBox.style.backgroundImage = `url('${options.imgname}')`;
