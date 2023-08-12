@@ -5,7 +5,7 @@ function changeBg(options) {
     rightBox.style.backgroundColor = options.color;
   }
   if (options.imgname) {
-    rightBox.style.backgroundImage = `url('/${options.imgname}')`;
+    rightBox.style.backgroundImage = `url('${options.imgname}')`;
     rightBox.style.backgroundSize = "cover";
     rightBox.style.backgroundPosition = "center";
     rightBox.style.backgroundRepeat = "no-repeat";
